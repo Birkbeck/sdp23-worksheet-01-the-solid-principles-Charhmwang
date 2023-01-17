@@ -42,4 +42,27 @@ public class Board {
             + this.spots.get(6) + " | " + this.spots.get(7) + " | " + this.spots.get(8);
         System.out.print(formattedFirstRow);
     }
+
+    public void display2() {
+        List<String> firstRow = new ArrayList<>();
+        firstRow = firstRow();
+
+        List<String> secondRow = new ArrayList<>();
+        secondRow = secondRow();
+
+        List<String> thirdRow = new ArrayList<>();
+        thirdRow = thirdRow();
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (i == 0)
+                    System.out.print(formattedFirstRow.get(j));
+                if (i == 1)
+                    System.out.print(formattedSecondRow.get(j));
+                if (i == 2)
+                    System.out.print(formattedThirdRow.get(j));
+            }
+            System.out.println;
+        }
+    }
 }
