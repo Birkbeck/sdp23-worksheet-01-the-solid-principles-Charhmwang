@@ -11,58 +11,70 @@ public class Board {
         }
     }
 
-    public List<String> firstRow() {
-        List<String> firstRow = new ArrayList<>();
-        firstRow.add(this.spots.get(0));
-        firstRow.add(this.spots.get(1));
-        firstRow.add(this.spots.get(2));
-        return firstRow;
-    }
-
-    public List<String> secondRow() {
-        List<String> secondRow = new ArrayList<>();
-        secondRow.add(this.spots.get(3));
-        secondRow.add(this.spots.get(4));
-        secondRow.add(this.spots.get(5));
-        return secondRow;
-    }
-
-    public List<String> thirdRow() {
-        List<String> thirdRow = new ArrayList<>();
-        thirdRow.add(this.spots.get(6));
-        thirdRow.add(this.spots.get(7));
-        thirdRow.add(this.spots.get(8));
-        return thirdRow;
-    }
-
-    // Poor code — can you improve this?
     public void display() {
-        String formattedFirstRow = this.spots.get(0) + " | " + this.spots.get(1) + " | " + this.spots.get(2) + "\n"
-            + this.spots.get(3) + " | " + this.spots.get(4) + " | " + this.spots.get(5) + "\n"
-            + this.spots.get(6) + " | " + this.spots.get(7) + " | " + this.spots.get(8);
-        System.out.print(formattedFirstRow);
-    }
-
-    public void display2() {
-        List<String> firstRow = new ArrayList<>();
-        firstRow = firstRow();
-
-        List<String> secondRow = new ArrayList<>();
-        secondRow = secondRow();
-
-        List<String> thirdRow = new ArrayList<>();
-        thirdRow = thirdRow();
-
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (i == 0)
-                    System.out.print(formattedFirstRow.get(j));
-                if (i == 1)
-                    System.out.print(formattedSecondRow.get(j));
-                if (i == 2)
-                    System.out.print(formattedThirdRow.get(j));
+        int len = spots.size();
+        int row = math.sqrt(len);
+        int col = row;
+        for (int i = 0; i < row; i++)
+            for (int j = 0; j < col; j++) {
+                System.out.print(this.spots.get(i * col + j));
             }
-            System.out.println;
+            System.out.println();
         }
     }
+
+//    public List<String> firstRow() {
+//        List<String> firstRow = new ArrayList<>();
+//        firstRow.add(this.spots.get(0));
+//        firstRow.add(this.spots.get(1));
+//        firstRow.add(this.spots.get(2));
+//        return firstRow;
+//    }
+//
+//    public List<String> secondRow() {
+//        List<String> secondRow = new ArrayList<>();
+//        secondRow.add(this.spots.get(3));
+//        secondRow.add(this.spots.get(4));
+//        secondRow.add(this.spots.get(5));
+//        return secondRow;
+//    }
+//
+//    public List<String> thirdRow() {
+//        List<String> thirdRow = new ArrayList<>();
+//        thirdRow.add(this.spots.get(6));
+//        thirdRow.add(this.spots.get(7));
+//        thirdRow.add(this.spots.get(8));
+//        return thirdRow;
+//    }
+
+//     Poor code — can you improve this?
+//    public void display() {
+//        String formattedFirstRow = this.spots.get(0) + " | " + this.spots.get(1) + " | " + this.spots.get(2) + "\n"
+//            + this.spots.get(3) + " | " + this.spots.get(4) + " | " + this.spots.get(5) + "\n"
+//            + this.spots.get(6) + " | " + this.spots.get(7) + " | " + this.spots.get(8);
+//        System.out.print(formattedFirstRow);
+//    }
+
+//    public void display2() {
+//        List<String> firstRow = new ArrayList<>();
+//        firstRow = firstRow();
+//
+//        List<String> secondRow = new ArrayList<>();
+//        secondRow = secondRow();
+//
+//        List<String> thirdRow = new ArrayList<>();
+//        thirdRow = thirdRow();
+//
+//        for (int i = 0; i < 3; i++) {
+//            for (int j = 0; j < 3; j++) {
+//                if (i == 0)
+//                    System.out.print(firstRow.get(j));
+//                if (i == 1)
+//                    System.out.print(secondRow.get(j));
+//                if (i == 2)
+//                    System.out.print(thirdRow.get(j));
+//            }
+//            System.out.println();
+//        }
+//    }
 }
