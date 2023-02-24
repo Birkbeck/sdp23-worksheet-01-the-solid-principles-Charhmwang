@@ -1,9 +1,8 @@
-public final class PenthouseSuite extends Apartment {
+public non-sealed class PenthouseSuite extends Apartment {
+
+    int numberOfBedrooms;
     public PenthouseSuite() {
         this.numberOfBedrooms = 4;
     }
 
-    public void setSquareFootage(int sqft) {
-        this.squareFootage = sqft;
-    }
 }
